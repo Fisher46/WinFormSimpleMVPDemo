@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
 using WindowsFormsApp1.Presenter;
 
 namespace WindowsFormsApp1.View
 {
-    public partial class Customerform : Form
+    public partial class Customerform : Form, ICustomerView
     {
         public Customerform()
         {
@@ -42,6 +43,21 @@ namespace WindowsFormsApp1.View
         }
 
         public CustomerPresenter customerPresenter { get; set; }
+        public int SelectedCustomer { get => listBox1.SelectedIndex; set => listBox1.SelectedIndex = value; }
 
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            customerPresenter.SaveCustomer();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            customerPresenter.SaveCustomer();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            customerPresenter.UpdateCustomerView(listBox1.SelectedIndex);
+        }
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="View\Customerform.Designer.cs">
       <DependentUpon>Customerform.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ICustomerView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
